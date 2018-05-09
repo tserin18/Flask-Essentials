@@ -70,42 +70,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">description</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Polar Diameter</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Mass</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Moons</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Orbit Distance</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Orbit Period</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Surface Temperature</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">First Record</th>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Recorded By:</th>
-                                        <td></td>
-                                    </tr>
+                                    {% for key, value in facts.items() %}
+                                        <tr>
+                                            <th scope="row">{{key}}</th>
+                                            <td>{{value}}</td>
+                                        </tr>
+                                    {% endfor %}                                     
                                 </tbody>
                             </table>
                         </div>

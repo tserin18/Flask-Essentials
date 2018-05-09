@@ -41,14 +41,15 @@ def index():
             weather = v
         elif k == "featured_image_url":
             featured_image_url = v
-        """ elif k == "hemisphere_image_urls":
-            hemisphere_image_urls = v 
-        
         elif k == "facts":
-            facts = v """
+            facts = v
+        """ elif k == "hemisphere_image_urls": 
+            hemisphere_image_urls = v """
+        
+         
         
     #db.general.insert_one(output) 
-    return render_template('index.html',news=news,weather=weather,featured_image_url=featured_image_url)
+    return render_template('index.html',news=news,weather=weather,featured_image_url=featured_image_url,facts=facts)
 
 
 if __name__ == "__main__":
