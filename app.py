@@ -43,14 +43,15 @@ def index():
             featured_image_url = v
         elif k == "facts":
             facts = v
-        """ elif k == "hemisphere_image_urls": 
-            hemisphere_image_urls = v """
-        
-         
-        
-    #db.general.insert_one(output) 
-    return render_template('index.html',news=news,weather=weather,featured_image_url=featured_image_url,facts=facts)
+        elif k == "hemisphere_image_urls": 
+            hemisphere_image_urls = v
+    return render_template('index.html',news=news,weather=weather,featured_image_url=featured_image_url,facts=facts,hemisphere_image_urls=hemisphere_image_urls)
 
+@app.route("/scrape")
+def scrape_new():
+    output = scrape_mars.scrape() 
+    db.general.insert_one(output)
+    return render_template('success.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
