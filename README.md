@@ -5,7 +5,7 @@
 
 <b>Week 13 USC Viterbi Data Analytics Bootcamp<br/>
 Student:  Tsering Sherpa<br/>
-Date:  05/11/2018<b>
+Date:  05/11/2018</b>
 
 <h3>Abstract:</h3>
 <p>The purpose of this project is to scrape planet Mars information from five different websites to get a comprehensive and upto date understanding of  Mars.</p>
