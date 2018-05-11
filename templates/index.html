@@ -45,16 +45,16 @@
         <div class="album2 py-5 bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <h2 class="card-title">Featured Mars Image</h2>
-                        <div class="card mb-8 box-shadow">
+                        <div class="card mb-7 box-shadow">
                             <img class="card-img-top" src={{featured_image_url}} alt="Card image cap">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="col1">
                             <h4 class="card-title">Current Weather on Mars</h4>
-                            <div class="card mb-4 box-shadow">
+                            <div class="card mb-5 box-shadow">
                                 <div class="card-body">
                                     <p class="card-text">{{weather}}
                                     </p>
@@ -62,7 +62,7 @@
                             </div>
 
                             <h4 class="card-title">Mars Facts</h4>
-                            <table class="table">
+                            <table class="table" >
                                 <thead>
                                     <tr>
                                         <th scope="col"></th>
@@ -72,8 +72,8 @@
                                 <tbody>
                                     {% for key, value in facts.items() %}
                                         <tr>
-                                            <th scope="row">{{key}}</th>
-                                            <td>{{value}}</td>
+                                            <td style="text-align:right">{{key}}</td>
+                                            <td style="text-align:right">{{value}}</td>
                                         </tr>
                                     {% endfor %}                                     
                                 </tbody>
