@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup as bs
 #################################################
 def init_browser():
      # @NOTE: Replace the path with your actual path to the chromedriver
-    executable_path = {"executable_path": "/Users/tseringsherpa/Desktop/chromedriver"}
+    executable_path = {"executable_path": "/Users/tseringsherpa/Documents/GitHub/Flask-Essentials/resources/chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
     
 #################################################
@@ -30,7 +30,7 @@ def get_news(browser):
         soup = bs(html_string, 'html.parser')
 
         div = soup.find('div', attrs={'class': 'list_text'})
-        title=div.findNext('div', {'class': 'content_title'}).text            
+        title=div.findNext('div', {'class': 'content_title'}).text
         description=div.findNext('div', {'class': 'article_teaser_body'}).text
     except:
         pass
@@ -38,7 +38,7 @@ def get_news(browser):
 
 #################################################
 # 2. get_featured_image
-# Returns featured_image_url 
+# Returns featured_image_url
 # @NOTE: full size image obtained by clicking full size button
 #################################################
 def get_featured_image(browser):
@@ -54,7 +54,7 @@ def get_featured_image(browser):
         anchor = soup.find('a','ready')
         if anchor.img:
             image_url = anchor.img['src']
-        featured_image_url = "https://www.jpl.nasa.gov" + image_url      
+        featured_image_url = "https://www.jpl.nasa.gov" + image_url
     except:
         pass
     return featured_image_url
@@ -69,11 +69,11 @@ def get_latest_weather(browser):
         browser.visit(url)
         html_string = browser.html
         soup = bs(html_string, 'lxml')
-        
+
         latest_weather = soup.find('div','js-tweet-text-container').text.strip()
     except:
         pass
-    return latest_weather 
+    return latest_weather
 
 #################################################
 # 4. get_facts
@@ -100,21 +100,21 @@ def get_facts(browser):
 
 #################################################
 # 5. get_hemispheres
-# Returns each of four hemisphere_image_urls with corresponding title as list  
+# Returns each of four hemisphere_image_urls with corresponding title as list
 # @NOTE: full sixe image obtained by clicking navigationg to the header(h3) link
 #################################################
 def get_hemispheres(browser):
     hemisphere_image_urls = []
-    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars' 
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     try:
-        browser.visit(url)     
+        browser.visit(url)
         html_string = browser.html
         soup = bs(html_string, 'lxml')
 
         for header in soup.find_all("h3"):
             title = header.text
             uri = header.find_previous("a")
-            image_url = 'https://astrogeology.usgs.gov'+ uri['href'] 
+            image_url = 'https://astrogeology.usgs.gov'+ uri['href']
             browser.visit(image_url)
 
             sub_html_string = browser.html
@@ -127,9 +127,9 @@ def get_hemispheres(browser):
     return hemisphere_image_urls
 #################################################
 # 5. scrape
-# Calls each scraping functions 
+# Calls each scraping functions
 # Returns data merged as single output(dictionary) which is obtained from scraping fuctions
-# @NOTE: This is the function which is called from app.py 
+# @NOTE: This is the function which is called from app.py
 #################################################
 def scrape():
     browser = init_browser()
