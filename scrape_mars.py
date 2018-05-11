@@ -1,12 +1,27 @@
+#################################################
+# Import Dependencies
+# @TODO: Import necessary libraries
+#################################################
 import time
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 
+#################################################
+# Initialize browser
+# Returns a new browser window
+# @NOTE: Chromedriver path may vary
+# @Note: Browser is passed as argument to avoid opening separate windows for separate functions
+#################################################
 def init_browser():
      # @NOTE: Replace the path with your actual path to the chromedriver
     executable_path = {"executable_path": "/Users/tseringsherpa/Desktop/chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
     
+#################################################
+# Separate functions to get data from different source
+# 1. get_news
+# Returns latest news (title and short paragraph)
+#################################################
 def get_news(browser):
     url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     try:
@@ -21,13 +36,18 @@ def get_news(browser):
         pass
     return {"news_title":title,"news_p":description}
 
+#################################################
+# 2. get_featured_image
+# Returns featured_image_url 
+# @NOTE: full size image obtained by clicking full size button
+#################################################
 def get_featured_image(browser):
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     try:
         browser.visit(url)
         button = browser.find_by_id("full_image")
         button.click()
-        time.sleep(2)
+        time.sleep(5)
 
         html_string = browser.html
         soup = bs(html_string, 'html.parser')
@@ -39,6 +59,10 @@ def get_featured_image(browser):
         pass
     return featured_image_url
 
+#################################################
+# 3. get_latest_weather
+# Returns first tweet that gives latest news
+#################################################
 def get_latest_weather(browser):
     url = 'https://twitter.com/marswxreport?lang=en'
     try:
@@ -51,6 +75,10 @@ def get_latest_weather(browser):
         pass
     return latest_weather 
 
+#################################################
+# 4. get_facts
+# Returns mars facts table data
+#################################################
 def get_facts(browser):
     url = 'https://space-facts.com/mars/'
     try:
@@ -70,6 +98,11 @@ def get_facts(browser):
         pass
     return facts
 
+#################################################
+# 5. get_hemispheres
+# Returns each of four hemisphere_image_urls with corresponding title as list  
+# @NOTE: full sixe image obtained by clicking navigationg to the header(h3) link
+#################################################
 def get_hemispheres(browser):
     hemisphere_image_urls = []
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars' 
@@ -92,7 +125,12 @@ def get_hemispheres(browser):
     except:
         pass
     return hemisphere_image_urls
-
+#################################################
+# 5. scrape
+# Calls each scraping functions 
+# Returns data merged as single output(dictionary) which is obtained from scraping fuctions
+# @NOTE: This is the function which is called from app.py 
+#################################################
 def scrape():
     browser = init_browser()
     output ={}
