@@ -1,6 +1,7 @@
 # Mission to Mars
 
-## Web Scraping with splinter and mongoDB 
+## Web Scraping with Splinter and MongoDB 
+
 ### Week 13 USC Viterbi Data Analytics Bootcamp
 ### Student:  Tsering Sherpa
 ### Date:  05/11/2018 
@@ -10,11 +11,11 @@
 <p>Each of the site is used to gather information on different aspect of Mars which is then collectively presented as html</p>
 
 <h3>Data Sources:</h3>
-#### [Latest Mars News]https://mars.nasa.gov/news/
-#### [Featured Image]https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars
-#### [Latest Mars Weather]https://twitter.com/marswxreport?lang=en
-#### [Mars Facts]https://space-facts.com/mars/
-#### [Mars Hemispheres]https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
+#### [Latest Mars News]https://mars.nasa.gov/news/ <br>
+#### [Featured Image]https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars <br>
+#### [Latest Mars Weather]https://twitter.com/marswxreport?lang=en <br>
+#### [Mars Facts]https://space-facts.com/mars/ <br>
+#### [Mars Hemispheres]https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars <br>
 
 <h3>Technology  Employed:</h3>
 <ul>
