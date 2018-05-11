@@ -2,20 +2,23 @@
 
 ## Web Scraping with Splinter and MongoDB 
 
-### Week 13 USC Viterbi Data Analytics Bootcamp
-### Student:  Tsering Sherpa
-### Date:  05/11/2018 
+
+<b>Week 13 USC Viterbi Data Analytics Bootcamp<br/>
+Student:  Tsering Sherpa<br/>
+Date:  05/11/2018<b>
 
 <h3>Abstract:</h3>
 <p>The purpose of this project is to scrape planet Mars information from five different websites to get a comprehensive and upto date understanding of  Mars.</p>
 <p>Each of the site is used to gather information on different aspect of Mars which is then collectively presented as html</p>
 
 <h3>Data Sources:</h3>
-#### [Latest Mars News]https://mars.nasa.gov/news/ <br>
-#### [Featured Image]https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars <br>
-#### [Latest Mars Weather]https://twitter.com/marswxreport?lang=en <br>
-#### [Mars Facts]https://space-facts.com/mars/ <br>
-#### [Mars Hemispheres]https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars <br>
+<ul>
+<li> [Latest Mars News]https://mars.nasa.gov/news/ </li> <br>
+<li> [Featured Image]https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars </li> <br>
+<li>[Latest Mars Weather]https://twitter.com/marswxreport?lang=en </li> <br>
+<li> [Mars Facts]https://space-facts.com/mars/ </li> <br>
+<li> [Mars Hemispheres]https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars </li>
+ </ul>
 
 <h3>Technology  Employed:</h3>
 <ul>
