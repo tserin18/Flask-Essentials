@@ -107,7 +107,6 @@ more-itertools==4.1.0
 mpmath==1.0.0
 mrjob==0.6.3
 msgpack-python==0.5.1
-multipledispatch==0.4.9
 navigator-updater==0.1.0
 nb-conda==2.2.1
 nb-conda-kernels==2.1.1
